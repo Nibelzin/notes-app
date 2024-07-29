@@ -1,5 +1,6 @@
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="flex h-screen flex-col justify-between">
         <Header></Header>
         <div className="p-10 h-full overflow-y-auto bg-slate-50">
+          <Toaster position="top-right" containerStyle={{top:70, right:50}}/>
           {children}
         </div>
         <Footer></Footer>

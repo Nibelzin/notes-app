@@ -1,3 +1,5 @@
+
+
 export default function Home() {
     return (
         <div className="flex h-full py-10">
@@ -7,7 +9,7 @@ export default function Home() {
                     <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
                 </svg>
 
-                <h1 className="text-6xl md:text-8xl font-bold">Notas rápidas <br/> e dinâmicas.</h1>
+                <h1 className="text-6xl md:text-8xl font-bold relative">Notas rápidas <br/> e <span className="text-yellow-500">dinâmicas.</span></h1>
             </div>
         </div>
     )
