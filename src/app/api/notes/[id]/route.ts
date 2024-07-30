@@ -10,9 +10,16 @@ export async function PUT(request: any, { params } : any) {
     return NextResponse.json({ message: "Topic updated" }, { status: 200 })
 }
 
-export async function GET(request : Request, { params }: any) {
+export async function GET(request: any,{ params }: any) {
     const { id } = params 
     await dbConnect()
     const note = await Note.findOne({ _id: id })
     return NextResponse.json({ note }, { status: 200 })
+}
+
+export async function DELETE(request: any,{ params }: any) {
+    const { id } = params
+    await dbConnect()
+    const note = await Note.findByIdAndDelete({ _id: id})
+    return NextResponse.json({ note }, { status: 200})
 }

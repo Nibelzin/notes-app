@@ -1,5 +1,3 @@
-
-
 export default function Home() {
     return (
         <div className="flex h-full py-10">

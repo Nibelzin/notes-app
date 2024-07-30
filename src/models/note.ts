@@ -4,7 +4,8 @@ const noteSchema = new Schema(
     {
         category: String,
         title: String,
-        description: String
+        description: String,
+        date: {type: Date, default: Date.now}
     }
 )
 
