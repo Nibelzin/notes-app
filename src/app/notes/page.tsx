@@ -1,19 +1,20 @@
-import NewNoteButton from "../components/Buttons/NewNoteButton";
-import Note from "../components/Note/Note";
 import { getNotes } from "@/lib/utils";
+import NoteGroup from "../components/Note/NotesGroup";
 
 export default async function Notes() {
 
     const res = await getNotes()
     const notes = res.notes
-    
+
+    const notesCategories = notes.reduce((acc: Array<String>, curr: any) => {
+        if (curr.category.name !== "" && acc.filter((obj: any) => obj.name === curr.category.name).length === 0) acc.push(curr.category)
+        return acc
+    }, [])
 
     return (
-        <div className="flex flex-wrap gap-5 w-full">
-            {notes.map((n: any) => (
-                <Note key={n._id} id={n._id} title={n.title} category={n.category} description={n.description} date={n.date}/>
-            ))}
-            <NewNoteButton/>
+        <div>
+            <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-8">Suas notas</h1>
+            <NoteGroup notes={notes} notesCategories={notesCategories}/>
         </div>
     )
 }

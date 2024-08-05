@@ -7,7 +7,7 @@ export const getNotes = async () => {
         })
 
         if (!res.ok) {
-            throw new Error('Failed to fetch topics')
+            throw new Error('Failed to fetch notes')
         }
 
         return res.json()
