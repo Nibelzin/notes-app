@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const noteSchema = new Schema(
     {
-        category: String,
+        category: {name: String, color: String},
         title: String,
         description: String,
         date: {type: Date, default: Date.now}

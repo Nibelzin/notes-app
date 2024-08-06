@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex h-screen flex-col justify-between">
         <Header></Header>
-        <div className="p-10 h-full overflow-y-auto bg-slate-50">
+        <div className="p-10 h-full overflow-y-auto bg-slate-50 dark:bg-zinc-900 transition-colors">
           <Toaster position="top-right" containerStyle={{top:70, right:50}}/>
           {children}
         </div>
