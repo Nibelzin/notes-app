@@ -42,8 +42,8 @@ export default function NoteComponent(props: any) {
         <div className="bg-white border flex w-full flex-col shadow flex-1 lg:max-w-[28rem] lg:min-w-[23rem] rounded-lg h-72 p-3 text-gray-800
         dark:bg-zinc-800 dark:text-white dark:border-zinc-700 transition-colors">
             <div className="flex">
-                <input className="text-xl font-semibold flex-grow text-center outline-none
-                dark:bg-zinc-800 transition-colors" value={newNote.title} placeholder="Nova nota" onChange={e => { setNewNote({ ...newNote, title: e.target.value }) }} onKeyDown={() => props.updateNote(newNote)} />
+                <input className="text-xl font-semibold flex-grow w-0 text-center outline-none
+                dark:bg-zinc-800 transition-colors" value={newNote.title} placeholder="Nova nota" onChange={e => { setNewNote({ ...newNote, title: e.target.value }) }} onKeyUp={() => props.updateNote(newNote)} />
                 <div className="flex items-center gap-3">
                     <div className="relative" ref={deleteBoxref}>
                         <button onClick={() => setDeleteBoxvisible(!deleteBoxVisible)} className="outline-none" tabIndex={-1}>
@@ -56,7 +56,7 @@ export default function NoteComponent(props: any) {
                 </div>
             </div>
             <hr className="my-3 dark:border-zinc-700 transition-colors" />
-            <textarea className="flex-grow outline-none resize-none dark:bg-zinc-800 transition-colors" value={newNote.description} placeholder="Descrição..." onChange={e => { setNewNote({ ...newNote, description: e.target.value }) }} onKeyDown={() => props.updateNote(newNote)} />
+            <textarea className="flex-grow outline-none resize-none dark:bg-zinc-800 transition-colors" value={newNote.description} placeholder="Descrição..." onChange={e => { setNewNote({ ...newNote, description: e.target.value }) }} onKeyUp={() => props.updateNote(newNote)} />
             <div className="flex justify-between">
                 <p>{noteDate}</p>
                 <div ref={selectCategoryBoxRef}>
