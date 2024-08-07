@@ -1,7 +1,7 @@
 import Home from "./home/page"
 
 
-export default () => {
+export default function App () {
     return (
         <Home/>
     )

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import toast from "react-hot-toast";
-import { baseUrl } from "@/lib/globals";
 import { Category } from "@/app/interfaces/Category";
 
 export default function SelectCategory(props: any) {
@@ -12,7 +11,7 @@ export default function SelectCategory(props: any) {
 
     const handleSubmit = (e: any) => {
         e.preventDefault()
-        if (newCategoryMode) {
+        if (newCategoryMode === true) {
             if (newCategoryName === "") {
                 toast.error("Nome da Categoria não informado")
                 return
@@ -24,34 +23,21 @@ export default function SelectCategory(props: any) {
 
     }
 
-    const createNewCategory = async () => {
-        const newNoteCategory = {
-            category: {
-                name: newCategoryName,
-                color: selectedColor
-            }
+    const createNewCategory = () => {
+        const newNoteCategory: Category = {
+            name: newCategoryName,
+            color: selectedColor
         }
-
-        await fetch(`${baseUrl}/api/notes/${props.id}`, {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(newNoteCategory)
-        })
         toast.success("Categoria adicionada com sucesso!")
-        props.closeSelect(newNoteCategory.category)
+        props.closeSelect(newNoteCategory)
     }
 
-    const selectNewCategory = async () => {
+    const selectNewCategory = () => {
         const nextCategory =  props.notesCategories.find((c: Category) => c.name === selectedCategory)
         const newNoteCategory = {
             category: nextCategory ? nextCategory : { name: "", color: ""}
         }
 
-        await fetch(`${baseUrl}/api/notes/${props.id}`, {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(newNoteCategory)
-        })
         toast.success("Categoria selecionada com sucesso!")
         props.closeSelect(newNoteCategory.category)
     }
