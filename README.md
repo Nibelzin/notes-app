@@ -1,18 +1,37 @@
-Visando melhorar meus conhecimentos em NextJs e aplicar o que estou aprendendo, resolvi fazer um site de anotações dinâmico e fiquei bem satisfeito com o resultado!
+## Sistema de Anotações Dinâmico
 
-Foquei em deixar o projeto simples e moderno, sendo bem agradável e fácil de usar em qualquer dispositivo. Nele você pode adicionar, remover e editar notas diretamente, além de poder usar categorias, que podem ser filtradas assim que adicionadas as notas!
+Este projeto foi desenvolvido com o objetivo de aprimorar meus conhecimentos em Next.js e aplicar as tecnologias que estou aprendendo. O resultado é um sistema de anotações dinâmico, com uma interface simples, moderna e adaptada para qualquer dispositivo.
 
+### Funcionalidades:
 
-- O projeto é todo feito em Typescript, tendo suas variáveis tipadas e interfaces que ajudam na organização e prevenção de erros. 
+- **Gerenciamento de Notas**: Adicione, remova e edite notas diretamente na interface.
+- **Categorias**: Criação de categorias para organizar as notas, que podem ser facilmente filtradas.
+- **Dark Mode**: Modo escuro integrado para melhorar a usabilidade em diferentes ambientes de luz.
 
-- Todo o design foi feito usando TailwindCSS, deixando fácil e rápido a criação de uma aparência moderna e adaptável, além de facilitar a implementação do dark mode.
+### Tecnologias Utilizadas:
 
-- As notas são salvas no local storage, incialmente fiz ele usando MongoDB como banco de dados, porém mudei para o projeto poder ser adicionado ao meu portifólio e todos terem acesso.
+- **Typescript**: O projeto é totalmente tipado, utilizando interfaces que ajudam na organização do código e na prevenção de erros.
+- **TailwindCSS**: O design foi construído com TailwindCSS, proporcionando uma aparência moderna, responsiva e de fácil manutenção. A implementação do modo escuro também foi facilitada com Tailwind.
+- **Local Storage**: As notas são armazenadas localmente, garantindo que o projeto seja acessível sem a necessidade de um banco de dados. Inicialmente, o projeto utilizava MongoDB, mas foi alterado para Local Storage para facilitar a adição ao portfólio e permitir o acesso de qualquer pessoa.
 
+### Tecnologias Usadas 
 
-Tecnologias usadas 🔨
+- [Next.js](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Nanoid](https://github.com/ai/nanoid)
 
-- NextJS
-- Typescript
-- TailwindCSS
-- Nanoid
+### Deploy
+
+Você pode acessar o projeto ao vivo atraves deste link: [Deploy na Vercel](https://notes-app-dusky-chi.vercel.app/)
+
+### Imagens do Projeto
+
+**Tela Principal (Modo Claro)**
+
+![Tela Principal - Modo Claro](./public/main-dark.png)
+
+**Tela Principal (Modo Escuro)**
+
+![Tela Principal - Modo Escuro](./public/main-light.png)
+
